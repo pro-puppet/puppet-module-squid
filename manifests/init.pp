@@ -3,4 +3,9 @@
 
 class squid (
 ){
+
+  package {'squid':
+    ensure => present,
+  }
+
 }

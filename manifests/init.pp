@@ -8,4 +8,9 @@ class squid (
     ensure => present,
   }
 
+  service {'squid3':
+    ensure => running,
+    enable => true,
+  }
+
 }

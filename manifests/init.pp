@@ -8,6 +8,11 @@ class squid (
     ensure => present,
   }
 
+  file { '/etc/squid3/squid.conf':
+    ensure => file,
+    source => 'puppet:///modules/squid/squid.conf',
+  }
+
   service {'squid3':
     ensure => running,
     enable => true,

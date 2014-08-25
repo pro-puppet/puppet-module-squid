@@ -9,13 +9,15 @@ class squid (
   }
 
   file { '/etc/squid3/squid.conf':
-    ensure => file,
-    source => 'puppet:///modules/squid/squid.conf',
+    ensure  => file,
+    source  => 'puppet:///modules/squid/squid.conf',
+    require => Package['squid'],
   }
 
   service {'squid3':
-    ensure => running,
-    enable => true,
+    ensure  => running,
+    enable  => true,
+    require => File['/etc/squid3/squid.conf'],
   }
 
 }

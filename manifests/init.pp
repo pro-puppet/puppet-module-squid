@@ -10,6 +10,7 @@ class squid (
   $cache_peer          = undef,
   $cache_peer_access   = undef,
   $never_direct        = undef,
+  $cache_only          = undef,
 ){
 
   package {'squid':

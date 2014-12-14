@@ -51,3 +51,6 @@ cache_peer_access <%= val %>
 never_direct <%= val %>
 <% end -%>
 <% end -%>
+<% if @cache_only -%>
+cache deny all
+<% end -%>

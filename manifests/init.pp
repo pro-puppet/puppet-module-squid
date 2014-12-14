@@ -2,10 +2,11 @@
 # Source: https://github.com/pro-puppet/puppet-module-squid
 
 class squid (
-  $cache_dir = '/var/spool/squid3',
-  $cache_dir_size = '5000',
-  $port      = '3128',
+  $cache_dir           = '/var/spool/squid3',
+  $cache_dir_size      = '5000',
+  $port                = '3128',
   $maximum_object_size = '1024',
+  $http_access         = undef,
 ){
 
   package {'squid':

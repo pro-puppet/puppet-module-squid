@@ -20,6 +20,11 @@ http_access deny !Safe_ports
 http_access deny CONNECT !SSL_ports
 http_access allow localnet
 http_access allow localhost
+<% if @http_access -%> 
+<% @http_access.each do |val| -%> 
+http_access <%= val %>
+<% end -%> 
+<% end -%> 
 http_access deny all
 http_port <%= @port %>
 maximum_object_size <%= @maximum_object_size %> MB

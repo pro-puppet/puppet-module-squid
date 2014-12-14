@@ -36,3 +36,14 @@ refresh_pattern -i (/cgi-bin/|\?) 0 0%  0
 refresh_pattern (Release|Packages(.gz)*)$      0       20%     2880
 refresh_pattern .       0   20% 4320
 refresh_all_ims on
+<% if @cache_peer -%>
+<% @cache_peer.each do |val| -%>
+cache_peer <%= val %>
+<% end -%>
+<% end -%>
+<% if @cache_peer_access -%> 
+<% @cache_peer_access.each do |val| -%>
+cache_peer_access <%= val %>
+<% end -%>
+<% end -%>
+

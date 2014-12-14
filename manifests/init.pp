@@ -7,6 +7,8 @@ class squid (
   $port                = '3128',
   $maximum_object_size = '1024',
   $http_access         = undef,
+  $cache_peer          = undef,
+  $cache_peer_access   = undef,
 ){
 
   package {'squid':

@@ -11,22 +11,23 @@ class squid (
   $cache_peer_access   = undef,
   $never_direct        = undef,
   $cache_only          = undef,
-){
+) inherits squid::params {
 
-  package {'squid':
+
+  package { $::squid::params::package_name:
     ensure => present,
   }
 
-  file { '/etc/squid3/squid.conf':
+  file { "${::squid::params::config_dir}/squid.conf":
     ensure  => file,
     content => template('squid/squid.conf.erb'),
-    require => Package['squid'],
+    require => Package[$::squid::params::package_name],
   }
 
-  service {'squid3':
+  service { $::squid::params::service_name:
     ensure  => running,
     enable  => true,
-    require => File['/etc/squid3/squid.conf'],
+    require => File["${::squid::params::config_dir}/squid.conf"],
   }
 
 }

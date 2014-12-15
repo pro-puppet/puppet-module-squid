@@ -5,7 +5,7 @@ class squid::params {
       $package_name = 'squid3'
       $service_name = 'squid3'
       $config_dir   = '/etc/squid3'
-     }
+    }
     'Redhat': {
       $package_name = 'squid'
       $service_name = 'squid'

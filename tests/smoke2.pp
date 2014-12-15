@@ -1,12 +1,12 @@
-file { '/disk'
+file { '/disk':
   ensure => directory,
 } ->
 
-file { '/disk/trump'
+file { '/disk/trump':
   ensure => directory,
 } ->
 
-file { '/disk/trump/squid'
+file { '/disk/trump/squid':
   ensure => directory,
 } ->
 

@@ -20,11 +20,11 @@ http_access deny !Safe_ports
 http_access deny CONNECT !SSL_ports
 http_access allow localnet
 http_access allow localhost
-<% if @http_access -%> 
-<% @http_access.each do |val| -%> 
+<% if @http_access -%>
+<% @http_access.each do |val| -%>
 http_access <%= val %>
-<% end -%> 
-<% end -%> 
+<% end -%>
+<% end -%>
 http_access deny all
 http_port <%= @port %>
 maximum_object_size <%= @maximum_object_size %> MB
@@ -41,7 +41,7 @@ refresh_all_ims on
 cache_peer <%= val %>
 <% end -%>
 <% end -%>
-<% if @cache_peer_access -%> 
+<% if @cache_peer_access -%>
 <% @cache_peer_access.each do |val| -%>
 cache_peer_access <%= val %>
 <% end -%>
